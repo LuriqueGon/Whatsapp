@@ -37,7 +37,7 @@
 
             <header class="menuPerfil">
                 <div class="perfilImagem">
-                    <img src="img/perfil.jpg" alt="">
+                    <img src="img/perfil.jpg">
                 </div>
                 <div class="perfilConfig">
                     <ul>
@@ -51,29 +51,86 @@
             <div class="menuConversas">
                 <div class="conversasSearch">
                     <p>
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <i class="fa-solid fa-arrow-left-long"></i>
-                        <input type="search" placeholder="Pesquisar ou começar uma nova conversa">
+                        <i class="fa-solid fa-magnifying-glass using" id="search" onclick="location.href='#'"></i>
+                        <i class="fa-solid fa-arrow-left-long" id="back"></i>
+                        <input onfocus="MudarClassP(this)" onblur="VoltarClassP(this)" type="search" placeholder="Pesquisar ou começar uma nova conversa" id="searchConversas">
                     </p>
                 </div>
                 <div class="conversasView">
-                    <p>
-                        <i class="fa-regular fa-folder-open"></i>
-                        Arquivadas
-                        <span id="arquivadasQuant">7</span>
-                    </p>
-                    <div class="conversasCard">
-                        <div class="perfilImagem">
-                            <!-- <i class="fa-regular fa-user"></i> -->
+                    <div class="conversasArquivadas">
+                        <span>
+                            <i class="fa-regular fa-folder-open"></i>
+                            <span id="arquivada">Arquivadas</span>
+                        </span>
+                        <span id="arquivadasQuant" class="notfy">7</span>
+                    </div>
+
+                    <div class="conversasCardGroup">
+
+                        <div class="conversasCard">
+                            <div class="infoPessoal">
+                                <div class="perfilImagem">
+                                    <!-- <i class="fa-regular fa-user"></i> -->
+                                    <img src="img/perfilMae.jpg">
+                                </div>
+                                <div class="PerfilInfo">
+                                    <h2 class="UserName">
+                                        Roseane
+                                    </h2>
+                                    <p class="lastMessage">
+                                        Certo, meu neném
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="infoNotfy">
+                                <span id="hora" class="nlida">
+                                    17:11
+                                </span>
+                                <div class="infoGroup">                                    
+                                    <span id="notificacao">
+                                        <i class="fa-solid fa-volume-high active"></i>
+                                        <!-- <i class="fa-solid fa-volume-xmark active"></i> -->
+                                    </span>
+                                    <span id="quantMessage" class="nlidaMessage">
+                                        5
+                                    </span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="PerfilInfo">
-                            <h2 class="UserName">
-                                Roseane
-                            </h2>
-                            <p class="lastMessage">
-                                Já
-                            </p>
+
+                        <div class="conversasCard">
+                            <div class="infoPessoal">
+                                <div class="perfilImagem">
+                                    <img src="img/perfilNoUser.png">
+                                </div>
+                                <div class="PerfilInfo">
+                                    <h2 class="UserName">
+                                        Uario
+                                    </h2>
+                                    <p class="lastMessage">
+                                        Como c tá?
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="infoNotfy">
+                                <span id="hora" class="nlida">
+                                    14:21
+                                </span>
+                                <div class="infoGroup">                                    
+                                    <span id="notificacao">
+                                        <i class="fa-solid fa-volume-high "></i>
+                                        <i class="fa-solid fa-volume-xmark active"></i>
+                                    </span>
+                                    <span id="quantMessage" class="nlidaMessage">
+                                        1
+                                    </span>
+                                </div>
+                            </div>
                         </div>
+
+                        
+
+
                     </div>
                 </div>
             </div>
@@ -94,4 +151,40 @@
         </section>
     </main>
 </body>
+<script>
+
+    const MudarClassP = input => {
+        $('.menuWhatsApp .menuConversas .conversasSearch p').addClass('border border-top-0 border-left-0 border-right-0 border-info')
+           
+        
+        setTimeout(()=>{
+            $('#search').removeClass('using')
+            $('#back').addClass('using')  
+        },200)
+
+        $('#back').on('click', e => {
+            $('#searchConversas').val('')
+        })
+    }
+
+    
+    const VoltarClassP = input => {
+        $('.menuWhatsApp .menuConversas .conversasSearch p').removeClass()
+
+        setTimeout(()=>{
+            $('#search').addClass('using')
+            $('#back').removeClass('using')  
+        },200)
+
+        $('#searchConversas').change(e => {
+            location.href =`#${$('#searchConversas').val()}`
+        })
+        
+    }
+
+
+
+    
+    
+</script>
 </html>

@@ -1,3 +1,10 @@
+:root{
+  --text-color: #54656f;
+  --text-color-2: #00a884;
+  --text-color-3: #25d366;
+  --text-color-4: #17a54b;
+  --background-color:rgba(70, 69, 69, 0.493) ;
+}
 /* TUDO */
 *{
   text-decoration: none;
@@ -5,10 +12,38 @@
   color: inherit;
   list-style: none;
 }
+.border{
+  border-width: 3px!important;
+}
+.notfy{
+  color: var(--text-color-3)!important;
+  font-weight: bold;
+  text-shadow: .1rem .1rem .2rem rgba(126, 112, 112, 0.7);
+}
+.nlida{
+  color: var(--text-color-4)!important;
+  font-weight: bold;
+}
+.nlidaMessage{
+  min-width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--text-color-3);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.active{
+  display: block!important;
+}
 
 /* TAGS PRINCIPAIS */
 html,body {
   height: 100%;
+  background-color: #fff;
 }
 body {
   font-family: "Segoe UI", Arial, sans-serif;
@@ -19,8 +54,7 @@ main{
 
 /* MENUWHATSAPP*/
 .menuWhatsApp {
-  background-color: rgba(255, 0, 0, 0.329);
-  width: 100%;
+  width: 100vw;
 }
 
 /* MENUWHATSAPP / HEADER  */
@@ -28,6 +62,8 @@ main{
   display: flex;
   justify-content: space-between;
   background-color: #f2f0f5;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.4);
+  margin-bottom: 1rem;
 }
 .menuWhatsApp header.menuPerfil div {
   padding: .5rem 1rem;
@@ -37,11 +73,11 @@ main{
   height: 4rem;
   border-radius: 50%;
 }
-.menuWhatsApp header.menuPerfil .perfilImagem:hover img{
-  background-color: rgba(70, 69, 69, 0.493);
+.menuWhatsApp header.menuPerfil .perfilImagem:hover img, .menuWhatsApp header.menuPerfil .perfilImagem:hover i{
+  background-color: var(--background-color);
   cursor: pointer;
 }
-.menuWhatsApp header.menuPerfil .perfilImagem img{
+.menuWhatsApp header.menuPerfil .perfilImagem img, .menuWhatsApp header.menuPerfil .perfilImagem i{
   width: 4rem;
   height: 4rem;
   padding: .4rem;
@@ -58,19 +94,122 @@ main{
   margin: 0 .2rem;
   font-size: 1.3rem;
   cursor: pointer;
-  color: #54656f;
+  color: var(--text-color);
   display: flex;
   justify-content: center;
   align-items: center;
   
 }
 .menuWhatsApp header.menuPerfil .perfilConfig ul li:hover{
-  background-color: rgba(70, 69, 69, 0.493);
+  background-color: var(--background-color);
   border-radius: 50%;
 }
 
 
 /* MENUWHATSAPP / MENUCONVERSAS */
+.menuWhatsApp .menuConversas{
+  border-bottom: 3px solid #fff;
+}
+.menuWhatsApp .menuConversas .conversasSearch{
+  width: 100vw;
+}
+.menuWhatsApp .menuConversas .conversasSearch p{
+  width: 84%;
+  margin: 0 auto 1rem auto;
+  border-bottom: 3px solid transparent;
+}
+.menuWhatsApp .menuConversas .conversasSearch p i{
+  font-size: 0;
+  color: var(--text-color);
+  margin-right: .2rem;
+  cursor: pointer;
+}
+.menuWhatsApp .menuConversas .conversasSearch p i.using{
+  font-size: 1.2rem;
+}
+.menuWhatsApp .menuConversas .conversasSearch p input{
+  width: 92%;
+  color: var(--text-color);
+  padding: .4rem;
+  border: 0;
+}
+.menuWhatsApp .menuConversas .conversasView{
+  margin: 0 1rem;
+}
+.menuWhatsApp .menuConversas .conversasView div{
+  padding: .5rem .5rem .2rem .5rem;
+}
+.menuWhatsApp .menuConversas .conversasView .conversasArquivadas{
+  width: 100%;
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+.menuWhatsApp .menuConversas .conversasView .conversasArquivadas i{
+  margin: 0 .6rem;
+  color: var(--text-color-2);
+  cursor: pointer;
+  font-size: 1.2rem;  
+}
+.menuWhatsApp .menuConversas .conversasView .conversasArquivadas span#arquivada{
+  margin-left: .4rem;
+}
+.menuWhatsApp .menuConversas .conversasView .conversasCardGroup{
+  width: 100%;
+  overflow: auto;
+}
+.menuWhatsApp .menuConversas .conversasView .conversasCardGroup .conversasCard{
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  display: flex;
+  cursor: pointer;
+}
+.menuWhatsApp .menuConversas .conversasView .conversasCardGroup .conversasCard .infoPessoal{
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.menuWhatsApp .menuConversas .conversasView .conversasCardGroup .conversasCard .infoPessoal .perfilImagem{
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  padding: 0;
+}
+.menuWhatsApp .menuConversas .conversasView .conversasCardGroup .conversasCard .infoPessoal .perfilImagem img{
+  width: 5rem;
+  height: 5rem;
+  padding: .4rem;
+  border-radius: 50%;
+  object-fit: cover; 
+}
+.menuWhatsApp .menuConversas .conversasView .conversasCardGroup .conversasCard .infoPessoal .PerfilInfo .UserName{
+  font-size: 1.3rem;
+  letter-spacing: .1rem;
+}
+.menuWhatsApp .menuConversas .conversasView .conversasCardGroup .conversasCard .infoPessoal .PerfilInfo .lastMessage{
+  color: var(--text-color);
+  font-weight: bold;
+}
+.menuWhatsApp .menuConversas .conversasView .conversasCardGroup .conversasCard .infoNotfy{
+  position: relative;
+}
+.menuWhatsApp .menuConversas .conversasView .conversasCardGroup .conversasCard .infoNotfy .infoGroup{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menuWhatsApp .menuConversas .conversasView .conversasCardGroup .conversasCard .infoNotfy .infoGroup #notificacao{
+  position: absolute;
+  right: 5rem;
+  bottom: 1.5rem;
+  font-size: 1.4rem;
+}
+.menuWhatsApp .menuConversas .conversasView .conversasCardGroup .conversasCard .infoNotfy .infoGroup #notificacao i{
+  display: none;
+}
+
 
 .menuMensagem{
   display: none;
