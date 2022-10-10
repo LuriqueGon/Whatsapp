@@ -5,7 +5,10 @@
   --text-color-4: #17a54b;
   --background-color:rgba(70, 69, 69, 0.493) ;
 }
-/* TUDO */
+
+/* MOBILE FIRST */
+
+/* Config Geral */
 *{
   text-decoration: none;
   outline: none;
@@ -203,7 +206,7 @@ main{
 .menuWhatsApp .menuConversas .conversasView .conversasCardGroup .conversasCard .infoNotfy .infoGroup #notificacao{
   position: absolute;
   right: 5rem;
-  bottom: 1.5rem;
+  bottom: 1.7rem;
   font-size: 1.4rem;
 }
 .menuWhatsApp .menuConversas .conversasView .conversasCardGroup .conversasCard .infoNotfy .infoGroup #notificacao i{

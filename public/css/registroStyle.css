@@ -1,0 +1,11 @@
+
+.input-group-prepend{
+    width: 9rem;
+}
+.input-group-text{
+    width: 9rem;
+    text-align: justify;
+}
+.btnGroup{
+    right: 0%;
+}
