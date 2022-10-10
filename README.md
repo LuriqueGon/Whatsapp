@@ -1,16 +1,16 @@
-# Whatsapp
+# ----- |Whatsapp| -----
  Clonagem do whatsapp
 
- ## Objetivo
+ ## --- |Objetivo| ---
 
-  ### Aprimorar HTML CSS, fazendo as Views, ultilizando Mobile First. 
+  ### -- |Aprimorar HTML CSS, fazendo as Views, ultilizando Mobile First| --
    #### Andamento
 
-  ### Atualizar o layout do Web Whatsapp, só que funcionando em celular.
+  ### -- |Atualizar o layout do Web Whatsapp, só que funcionando em celular| --
    #### Andamento
 
-  ### Mudar a funcionalidade padrão do Whatsapp.
+  ### -- |Mudar a funcionalidade padrão do Whatsapp| --
    #### Andamento
-   
-  ### Transformar em um app de conversas, aonde usa um numero de telefone, mas funcione pelo computador.
+
+  ### -- |Transformar em um app de conversas, aonde usa um numero de telefone, mas funcione pelo computador| --
    #### Andamento
