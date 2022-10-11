@@ -24,6 +24,14 @@
             $atualClass =  strtolower(str_replace('Controller', '',str_replace('App\\Controllers\\', '', get_class($this)))); 
             require_once "../app/View/$atualClass/".$this->view->page.".phtml";
         }
+
+        protected function authLogin(){
+            session_start();
+
+            if(!$_SESSION['autenticado']){
+                header('location: /');
+            }
+        }
     }
 
 ?>
