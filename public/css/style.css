@@ -6,6 +6,9 @@
   --background-color:rgba(70, 69, 69, 0.493) ;
 }
 
+@import 'intl-tel-input/build/css/intlTelInput.css';
+
+
 /* MOBILE FIRST */
 
 /* Config Geral */
@@ -15,6 +18,12 @@
   color: inherit;
   list-style: none;
 }
+input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
 .border{
   border-width: 3px!important;
 }
@@ -41,6 +50,32 @@
 }
 .active{
   display: block!important;
+}
+.onFocus{
+  display: none;
+}
+.w-alter{
+  width: 4rem!important;
+}
+.w-input-group{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+input.w-alter{
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border-bottom: 3px solid #151516;
+  border-radius: 0.25rem;
+  text-align: center;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+input.w-alter:last-child{
+  width: 50%!important;
 }
 
 /* TAGS PRINCIPAIS */
@@ -101,13 +136,169 @@ main{
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  opacity: .8;
 }
 .menuWhatsApp header.menuPerfil .perfilConfig ul li:hover{
-  background-color: var(--background-color);
+  background-color: transparent;
   border-radius: 50%;
+  opacity: 1;
+  color: #232527;
+}
+.menuWhatsApp .adicionarContato{
+  background-color: #ccc4;
+  padding: 1rem;
+  text-align: center;
+}
+.menuWhatsApp .adicionarContato select{
+  width: 7rem;
+  background-color: #f1f2f6;
+  text-align: center;
+  padding: .4rem;
+  border: 0;
+  border-bottom: 2px solid white;
+}
+.menuWhatsApp .adicionarContato select.ativado{
+  border-bottom: 2px solid green;
+}
+.menuWhatsApp .adicionarContato select.desativado{
+  border-bottom: 2px solid green;
+}
+.menuWhatsApp .adicionarContato input{
+  width: 10rem;
+  background-color: #f1f2f6;
+  text-align: center;
+  font-size: 1rem;
+  padding: .4rem;
+}
+.menuWhatsApp .adicionarContato #addNumber{
+  width: 84%;
+  border: 0;
+  margin-top: 1rem;
+  padding: 1rem 0;
+  background: red;
+  color: white;
+  font-size: 1.4rem;
+  letter-spacing: .2rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: .8;
+  border-radius: 0.9rem;
+  border-bottom: 3px solid #0005;
+}
+.menuWhatsApp .adicionarContato #addNumber.desativado{
+  background: rgb(228, 223, 223);
+  color: #202020;
+}
+/* Notfy */
+.menuWhatsApp .notificacao{
+  display: none;
+}
+.menuWhatsApp .notificacao.OpenMenu{
+  display: block;
+  width: 100%;
+  background-color: gray;
+  min-height: 100vh;
+  /* height: max-content; */
+  position: fixed;
+  top: 5.15rem;
+  text-align: center;
+  overflow: auto;
+  z-index: 1;
+}
+.menuWhatsApp .notificacao.OpenMenu ul{
+  width: 100%;
+  padding: 0;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.menuWhatsApp .notificacao.OpenMenu ul li{
+  background-color: white;
+  padding: 0.4rem 0rem;
+  width: 14rem;
+  border-radius: 1rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: 2px solid #0009;
+  box-shadow: 0.5rem 0.5rem 0.5rem #0004;
+  color: rgb(48, 47, 47);
+}
+.menuWhatsApp .notificacao.OpenMenu ul li.select{
+  color: green;
+  font-weight: bold;
+  opacity: .8;
+}
+.menuWhatsApp .notificacao.OpenMenu ul li:hover{
+  opacity: 1;
+  color: black;
+}
+.menuWhatsApp .notificacao.OpenMenu ul li.select:hover{
+  color: green;
+}
+.menuWhatsApp .notificacao.OpenMenu .cardGroup .card{
+  width: 75%;
+  margin: 1rem auto;
+  border: 2px solid;
+  height: 8rem;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
+.menuWhatsApp .notificacao.OpenMenu .cardGroup .card .info-wrapper{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 19rem; 
+}
+.menuWhatsApp .notificacao.OpenMenu .cardGroup .card .img-wrapper{
+  width: 7rem;
+  height: 7rem;
+  border: 1px solid blue;
+  border-radius: 50%;
+  padding: 0.5rem;
+  background-color: blue;
+  margin-left: 0.5rem;
+  margin-right: 1.2rem;
+  
+}
+.menuWhatsApp .notificacao.OpenMenu .cardGroup .card img{
+  width: 100%;
+  height: 100%;
+  border: 1px solid blue;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.menuWhatsApp .notificacao.OpenMenu .cardGroup .card p{
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: .1rem;
+  
+}
+.menuWhatsApp .notificacao.OpenMenu .cardGroup .card div.icons{
+  display: flex;
+  flex-direction: column;
+}
+.menuWhatsApp .notificacao.OpenMenu .cardGroup .card div i{
+  font-size: 2.4rem;
+  cursor: pointer;
+  margin: .6rem 0;
+}
+.menuWhatsApp .notificacao.OpenMenu .cardGroup .card div #accSolici{
+  color: rgb(47, 168, 47);
+}
+.menuWhatsApp .notificacao.OpenMenu .cardGroup .card div #accSolici:hover{
+  color: green;
+}
+.menuWhatsApp .notificacao.OpenMenu .cardGroup .card div #recSolici{
+  color: rgb(170, 43, 43);
+}
+.menuWhatsApp .notificacao.OpenMenu .cardGroup .card div #recSolici:hover{
+  color: red;
+}
 
 /* MENUWHATSAPP / MENUCONVERSAS */
 .menuWhatsApp .menuConversas{
@@ -217,3 +408,4 @@ main{
 .menuMensagem{
   display: none;
 }
+

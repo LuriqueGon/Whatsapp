@@ -1,5 +1,5 @@
 
-<form action="/completarInfo" method="POST" class="text-center">
+<form action="/completarInfo" method="POST" class="text-center" enctype="multipart/form-data">
     <h1 >Informações Adicionais</h1>
     <p>Acesse suas configurações do usuario, para alterar qualquer dado</p>
     <div class="img-wrapper">
@@ -11,15 +11,23 @@
         </div>
         <input type="text" class="form-control" value="<?php echo $this->view->info['nome'] ; ?>" name="nome" id="nome" required>
     </div>
-    
     <div class="input-group mb-3">
         <div class="input-group-prepend">
-            <label for="telefone" class="input-group-text" id="basic-addon1">Telefone</label>
+            <label for="formFile" class="input-group-text">Imagem de Perfil</label>
         </div>
-        <input type="tel" class="form-control" value="<?php echo $this->view->info['telefone'] ; ?>" name="telefone" id="telefone" required>
+        <input class="form-control" type="file" name="perfilImage" id="formFile">
+    </div>
+    <div class="input-group mb-3 w-input-group">
+        
+        <input type="tel" class=" w-alter" name="ddi" id="ddi" placeholder="DDI" maxlength="3" required>
+        
+        <input type="tel" class=" w-alter" name="ddd" id="ddd" placeholder="DDD" maxlength="2" required>
+    
+        <input type="tel" class="w-alter" name="telefone" id="telefone" placeholder="Insira seu Telefone Valido" maxlength="9" required>
+
     </div>
     <div class="btnGroup d-flex justify-content-center align-items-center mt-5 position-absolute">
-        <button type="submit" class="btn btn-danger mr-3"><i class="fa-solid fa-xmark"></i></button>
-        <button type="camcel" class="btn btn-success mr-3"><i class="fa-solid fa-angles-right"></i></button>
+        <button type="reset" class="btn btn-danger mr-3"><i class="fa-solid fa-xmark"></i></button>
+        <button type="submit" class="btn btn-success mr-3"><i class="fa-solid fa-angles-right"></i></button>
     </div>
 </form>

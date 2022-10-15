@@ -28,9 +28,25 @@
         protected function authLogin(){
             session_start();
 
-            if(!$_SESSION['autenticado']){
-                header('location: /');
+            if($_SESSION['autenticado']){
+                return true;
+            }else{
+                header('location: /criarConta');
             }
+
+        }
+
+        protected function authAutenticado(){
+            session_start();
+
+            if(isset($_SESSION['autenticado'])){
+                if($_SESSION['autenticado']){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+            
         }
     }
 

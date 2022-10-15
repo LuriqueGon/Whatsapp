@@ -27,10 +27,11 @@
         <input type="password" class="form-control" name="resenha" id="resenha" required>
     </div>
     <div class="btnGroup d-flex justify-content-center align-items-center mt-5 position-absolute">
-        <button type="submit" class="btn btn-danger mr-3"><i class="fa-solid fa-xmark"></i></button>
-        <button type="camcel" class="btn btn-success mr-3"><i class="fa-solid fa-angles-right"></i></button>
+        <button type="reset" class="btn btn-danger mr-3"><i class="fa-solid fa-xmark"></i></button>
+        <button type="submit" class="btn btn-success mr-3"><i class="fa-solid fa-angles-right"></i></button>
     </div>
-
+    <br><br>
+    <br><br>
     <?php if($this->view->erro[0] == true){ ?>
         <?php if($this->view->erro[1] == 0){?>
 
@@ -43,5 +44,11 @@
     <?php }}?>
     
     <small class="form-text text-danger text-center pt-3">*Ao clicar para avançar, você concorda com todos os <a href="#">Termos</a> do sistema!</small>
+
+    
+    <br><br>
+    <br><br>
+
+    <p class="form-text text-success text-center font-weight-bold">Se já tem uma conta <a href="/acessar" class="text-info">Acesse Já</a></p>
     
 </form>  

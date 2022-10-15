@@ -1,0 +1,50 @@
+
+<form class="text-center" method="POST" action="/autenticar">
+    <h1 >Crie seu perfil</h1>
+    <p>Acesse suas configurações do usuario, para alterar qualquer dado</p>
+    <div class="img-wrapper">
+        <img src="img/perfilNoUser.png">
+    </div>
+    
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label for="email" class="input-group-text" id="basic-addon1">E-mail</label>
+        </div>
+        <input type="email" class="form-control" value="<?php echo $this->view->info;?>" name="email" id="email" required>
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label for="senha" class="input-group-text" id="basic-addon1">Senha</label>
+        </div>
+        <input type="password" class="form-control" name="senha" id="senha" required>
+    </div>   
+
+    
+
+
+    <?php if($this->view->erro[0] == true){ ?>
+        <?php if($this->view->erro[1] == 0){?>
+            <br><br><br><br>
+            <p class="text-danger text-center pt-3">*Dados não conferem no banco</p>
+
+        <?php }else if($this->view->erro[1] == 1){?>
+            <br><br><br><br>
+            <!-- <p class="text-danger text-center pt-3">*E-mail Já cadastrado</p> -->
+
+    <?php }}?>
+    
+    <div class="btnGroup d-flex justify-content-center align-items-center mt-5 position-absolute">
+        <button type="reset" class="btn btn-danger mr-3"><i class="fa-solid fa-xmark"></i></button>
+        <button type="submit" class="btn btn-success mr-3"><i class="fa-solid fa-angles-right"></i></button>
+    </div>
+
+    
+
+    <br><br><br><br>
+
+    <p class="form-text text-success text-center font-weight-bold">Se ainda não tem uma conta <a href="/criarConta" class="text-info">Crie uma agora</a></p>
+
+    
+    
+</form>  

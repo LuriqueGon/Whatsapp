@@ -1,7 +1,8 @@
 {
-    "vendor-name" : "Twitter Clone",
+    "vendor-name" : "Whatsapp",
     "require":{
-        "php":">=7.0"
+        "php":">=7.0",
+        "twilio/sdk": "4.*"
     },
     "author":[
         {
